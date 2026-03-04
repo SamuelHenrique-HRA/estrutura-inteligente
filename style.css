@@ -25,7 +25,7 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 120px 20px 80px 20px;
 }
 
 .hero-content {
@@ -47,20 +47,43 @@ html {
     margin-bottom: 35px;
 }
 
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00c6ff, #7f5af0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
 .btn-primary {
-    padding: 14px 30px;
-    border-radius: 12px;
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 14px;
     background: linear-gradient(90deg, #00c6ff, #7f5af0);
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
-    box-shadow: 0 0 20px rgba(127,90,240,0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(127,90,240,0.35);
+    position: relative;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(127,90,240,0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(127,90,240,0.6);
 }
 
 /* EXPERIÊNCIA */
@@ -115,13 +138,19 @@ html {
 
 .cta-transicao {
     text-align: center;
-    padding: 100px 20px;
+    padding: 140px 20px;
     background: linear-gradient(180deg, transparent, rgba(127,90,240,0.1));
 }
 
 .cta-transicao h2 {
     font-size: 28px;
     margin-bottom: 20px;
+}
+
+.cta-transicao p {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 40px;
 }
 
 /* FORMULÁRIO */
@@ -260,6 +289,16 @@ button:hover {
 .impacto-item p {
     font-size: 14px;
     opacity: 0.8;
+}
+
+select {
+    color: white;
+    background-color: rgba(255,255,255,0.05);
+}
+
+select option {
+    background-color: #1f2937;
+    color: white;
 }
 
 .positivo .impacto-item {
