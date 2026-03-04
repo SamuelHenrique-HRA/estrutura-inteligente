@@ -304,3 +304,9 @@ select option {
 .positivo .impacto-item {
     box-shadow: 0 0 30px rgba(127,90,240,0.3);
 }
+
+.config-subtitulo {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 15px 0 25px 0;
+}

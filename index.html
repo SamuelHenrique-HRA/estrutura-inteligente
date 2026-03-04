@@ -98,6 +98,9 @@ Prioridade: Urgente
 <section id="atendimento" class="form-section">
     <div id="configNumero" class="config-box" style="display:none;">
         <h2>Configuração Inicial</h2>
+<p class="config-subtitulo">
+    Esse número será definido para receber automaticamente todas as solicitações organizadas, o cliente não vê essa parte e apenas para demostração do sistema.
+</p>
         <input type="text" id="numeroWhatsapp" placeholder="Digite seu WhatsApp com DDD">
         <button onclick="salvarNumero()">Salvar</button>
     </div>
@@ -108,12 +111,6 @@ Prioridade: Urgente
 
             <input type="text" id="nome" placeholder="Nome do cliente" required>
             <input type="text" id="bairro" placeholder="Bairro" required>
-
-            <select id="tipoAtendimento" required>
-                <option value="">Tipo de atendimento</option>
-                <option>Residencial</option>
-                <option>Comercial</option>
-            </select>
 
             <select id="equipamento" required>
                 <option value="">Equipamento</option>
