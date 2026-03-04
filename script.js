@@ -97,23 +97,27 @@ function enviarAtendimento() {
     const dataHora = agora.toLocaleString("pt-BR");
 
     // Mensagem estruturada
-    const mensagem =
-`📋 SOLICITAÇÃO DE ATENDIMENTO
+const mensagem =
+`━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*NOVA SOLICITAÇÃO DE ATENDIMENTO*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🗓 Data/Hora: ${dataHora}
+*Data/Hora:* ${dataHora}
 
-👤 Cliente: ${nome}
-📍 Bairro: ${bairro}
+*Cliente:* ${nome}
+*Localização:* ${bairro}
 
-🖥 Equipamento: ${equipamento}
+*Equipamento:* ${equipamento}
 
-📝 Relato do problema:
+*Descrição do problema:*
 ${descricao}
 
-🚨 Prioridade: ${nivelPrioridade}
+*Nível de Prioridade:* ${nivelPrioridade}
 
----
-Enviado pela Estrutura Inteligente de Atendimento Digital`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Solicitação organizada automaticamente pela
+Estrutura Inteligente de Atendimento Digital.
+`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
 
@@ -122,3 +126,4 @@ Enviado pela Estrutura Inteligente de Atendimento Digital`;
     window.open(url, "_blank");
 
 }
+
