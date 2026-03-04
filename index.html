@@ -1,113 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrutura Inteligente de Atendimento</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrutura Inteligente de Atendimento</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Atendimento Técnico Organizado e Profissional</h1>
-            <p>
-                Antes mesmo de falar no WhatsApp, coletamos todas as informações
-                necessárias para agilizar o diagnóstico e oferecer um atendimento mais rápido e eficiente.
-            </p>
-            <a href="#atendimento" class="btn-primary">Solicitar Atendimento</a>
+<!-- HERO IMPACTO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Seu Atendimento Pode Ser Muito Mais Profissional</h1>
+        <p>Transforme mensagens confusas em solicitações organizadas automaticamente.</p>
+        <a href="#experiencia" class="btn-primary">Ver Demonstração</a>
+    </div>
+</section>
+
+<!-- EXPERIÊNCIA GUIADA -->
+<section id="experiencia" class="experiencia">
+
+    <h2>Como normalmente acontece...</h2>
+
+    <div class="chat-simulacao ruim">
+        <div class="msg cliente">Oi, meu notebook parou 😭</div>
+        <div class="msg cliente">Acho que caiu</div>
+        <div class="msg cliente">Vocês arrumam?</div>
+        <div class="msg tecnico">Qual modelo?</div>
+        <div class="msg tecnico">Foi queda?</div>
+        <div class="msg tecnico">Qual bairro?</div>
+    </div>
+
+    <h2>Agora veja com a Estrutura Inteligente:</h2>
+
+    <div class="chat-simulacao boa">
+        <div class="msg sistema">
+📋 SOLICITAÇÃO ORGANIZADA
+
+Cliente: Carlos
+Bairro: Vila Oliveira
+Equipamento: Notebook
+Problema: Não liga após queda
+Prioridade: Urgente
         </div>
-    </section>
+    </div>
 
-    <!-- COMO FUNCIONA -->
-    <section class="como-funciona">
-        <h2>Como Funciona</h2>
-        <div class="passos">
-            <div class="passo">
-                <h3>1. Você informa o problema</h3>
-                <p>Preencha um breve formulário com os detalhes do equipamento e da situação.</p>
-            </div>
-            <div class="passo">
-                <h3>2. Sistema organiza as informações</h3>
-                <p>O sistema estrutura automaticamente os dados para facilitar o diagnóstico técnico.</p>
-            </div>
-            <div class="passo">
-                <h3>3. Atendimento mais rápido</h3>
-                <p>A equipe recebe sua solicitação já organizada e pode responder com mais precisão.</p>
-            </div>
+</section>
+
+<section class="impacto">
+    <h2>O que você está perdendo hoje?</h2>
+
+    <div class="impacto-grid">
+        <div class="impacto-item">
+            <h3>❌ Tempo</h3>
+            <p>Respondendo mensagens repetidas e pedindo informações básicas.</p>
         </div>
-    </section>
 
-    <!-- BENEFÍCIOS -->
-    <section class="beneficios">
-        <h2>Por que usar nosso atendimento digital?</h2>
-        <ul>
-            <li>✔ Redução de mensagens confusas</li>
-            <li>✔ Atendimento mais rápido</li>
-            <li>✔ Organização profissional</li>
-            <li>✔ Melhor experiência para o cliente</li>
-        </ul>
-    </section>
+        <div class="impacto-item">
+            <h3>❌ Organização</h3>
+            <p>Atendimentos misturados e sem padrão definido.</p>
+        </div>
 
-    <!-- CONFIGURAÇÃO DO DONO -->
-    <section id="configNumero" class="config-box" style="display:none;">
+        <div class="impacto-item">
+            <h3>❌ Conversões</h3>
+            <p>Clientes desistem porque o atendimento demora ou parece amador.</p>
+        </div>
+    </div>
+
+    <h2 style="margin-top:60px;">Com a Estrutura Inteligente você ganha:</h2>
+
+    <div class="impacto-grid positivo">
+        <div class="impacto-item">
+            <h3>✔ Agilidade</h3>
+            <p>Você recebe tudo organizado antes mesmo de responder.</p>
+        </div>
+
+        <div class="impacto-item">
+            <h3>✔ Profissionalismo</h3>
+            <p>Seu negócio passa autoridade desde o primeiro contato.</p>
+        </div>
+
+        <div class="impacto-item">
+            <h3>✔ Mais fechamentos</h3>
+            <p>Cliente confia mais e decide mais rápido.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSIÇÃO -->
+<section class="cta-transicao">
+    <h2>Pronto para testar?</h2>
+    <p>Simule agora uma solicitação real.</p>
+    <a href="#atendimento" class="btn-primary">Iniciar Atendimento</a>
+</section>
+
+<!-- FORMULÁRIO -->
+<section id="atendimento" class="form-section">
+    <div id="configNumero" class="config-box" style="display:none;">
         <h2>Configuração Inicial</h2>
-        <p>Insira o número de WhatsApp que irá receber as solicitações.</p>
-        <input type="text" id="numeroWhatsapp" placeholder="Ex: 11999998888">
-        <button onclick="salvarNumero()">Salvar Número</button>
-    </section>
+        <input type="text" id="numeroWhatsapp" placeholder="Digite seu WhatsApp com DDD">
+        <button onclick="salvarNumero()">Salvar</button>
+    </div>
 
-    <!-- FORMULÁRIO -->
-    <section id="atendimento" class="form-section">
-        <div id="formContainer">
-            <div class="form-box">
-                <h2>Solicitar Atendimento Técnico</h2>
+    <div id="formContainer" class="form-box">
+        <h2>Simular Atendimento</h2>
+        <form id="formAtendimento">
 
-                <form id="formAtendimento">
+            <input type="text" id="nome" placeholder="Nome do cliente" required>
+            <input type="text" id="bairro" placeholder="Bairro" required>
 
-                    <h3>Seus Dados</h3>
-                    <input type="text" id="nome" placeholder="Seu nome" required>
-                    <input type="text" id="bairro" placeholder="Seu bairro" required>
+            <select id="tipoAtendimento" required>
+                <option value="">Tipo de atendimento</option>
+                <option>Residencial</option>
+                <option>Comercial</option>
+            </select>
 
-                    <select id="tipoAtendimento" required>
-                        <option value="">Tipo de atendimento</option>
-                        <option>Residencial</option>
-                        <option>Comercial</option>
-                    </select>
+            <select id="equipamento" required>
+                <option value="">Equipamento</option>
+                <option>Celular</option>
+                <option>Notebook</option>
+                <option>Computador</option>
+                <option>Videogame</option>
+                <option>TV</option>
+            </select>
 
-                    <h3>Equipamento</h3>
-                    <select id="equipamento" required>
-                        <option value="">Selecione</option>
-                        <option>Celular</option>
-                        <option>Notebook</option>
-                        <option>Computador</option>
-                        <option>Videogame</option>
-                        <option>TV</option>
-                        <option>Outro</option>
-                    </select>
+            <textarea id="descricao" placeholder="Descreva o problema..." required></textarea>
 
-                    <h3>Descreva o Problema</h3>
-                    <textarea id="descricao" placeholder="Explique detalhadamente o que está acontecendo..." required></textarea>
+            <select id="urgencia">
+                <option>Normal</option>
+                <option>Urgente</option>
+                <option>Muito urgente</option>
+            </select>
 
-                    <h3>Urgência</h3>
-                    <select id="urgencia">
-                        <option>Normal</option>
-                        <option>Urgente</option>
-                        <option>Muito urgente</option>
-                    </select>
+            <button type="submit">Enviar para WhatsApp</button>
 
-                    <button type="submit">Enviar Solicitação para WhatsApp</button>
+        </form>
+    </div>
+</section>
 
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer class="footer">
-        <p>© 2026 Atendimento Digital Profissional</p>
-    </footer>
+<footer class="footer">
+    <p>© 2026 Estrutura Inteligente de Atendimento</p>
+</footer>
 
 <script src="script.js"></script>
 </body>

@@ -8,218 +8,260 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f6f8;
-    color: #2c2c2c;
-    line-height: 1.6;
+    background: radial-gradient(circle at top, #111827, #0f172a 60%);
+    color: white;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* HERO */
 
 .hero {
-    background: linear-gradient(135deg, #1f2937, #2d3748);
-    color: white;
-    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .hero-content {
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 700;
+    background: linear-gradient(90deg, #00c6ff, #7f5af0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 16px;
-    margin-bottom: 30px;
-    opacity: 0.9;
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 35px;
 }
 
 .btn-primary {
-    display: inline-block;
-    padding: 14px 28px;
-    background-color: #2d7ff9;
+    padding: 14px 30px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #00c6ff, #7f5af0);
     color: white;
-    border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
+    box-shadow: 0 0 20px rgba(127,90,240,0.4);
 }
 
 .btn-primary:hover {
-    background-color: #1c63d5;
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(127,90,240,0.6);
 }
 
-/* SEÇÕES */
+/* EXPERIÊNCIA */
 
-section {
-    padding: 60px 20px;
-}
-
-section h2 {
+.experiencia {
+    padding: 100px 20px;
     text-align: center;
+}
+
+.experiencia h2 {
+    margin: 60px 0 30px;
     font-size: 24px;
-    margin-bottom: 40px;
-    font-weight: 600;
 }
 
-/* COMO FUNCIONA */
+/* CHAT SIMULAÇÃO */
 
-.passos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.passo {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    width: 300px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    text-align: center;
-}
-
-.passo h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-/* BENEFÍCIOS */
-
-.beneficios ul {
+.chat-simulacao {
     max-width: 600px;
-    margin: 0 auto;
-    list-style: none;
+    margin: 0 auto 60px;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    text-align: left;
 }
 
-.beneficios li {
-    background: white;
-    margin-bottom: 15px;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+.msg {
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    max-width: 80%;
 }
 
-/* CONFIGURAÇÃO */
+.ruim .cliente {
+    background: #1f2937;
+}
 
-.config-box {
-    max-width: 500px;
-    margin: 40px auto;
-    background: #fff3cd;
-    padding: 25px;
-    border-radius: 10px;
+.ruim .tecnico {
+    background: #374151;
+    margin-left: auto;
+}
+
+.boa .sistema {
+    background: linear-gradient(90deg, #00c6ff, #7f5af0);
+    color: white;
+    white-space: pre-line;
+}
+
+/* CTA TRANSIÇÃO */
+
+.cta-transicao {
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 100px 20px;
+    background: linear-gradient(180deg, transparent, rgba(127,90,240,0.1));
 }
 
-.config-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 15px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.cta-transicao h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 /* FORMULÁRIO */
 
 .form-section {
-    background-color: #eef1f5;
+    padding: 100px 20px;
 }
 
 .form-box {
     max-width: 600px;
     margin: 0 auto;
-    background: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 0 50px rgba(127,90,240,0.2);
 }
 
 .form-box h2 {
     text-align: center;
-    margin-bottom: 25px;
-}
-
-.form-box h3 {
-    font-size: 14px;
-    margin: 20px 0 10px;
-    font-weight: 600;
-    color: #444;
+    margin-bottom: 30px;
 }
 
 input,
 select,
 textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: 1px solid #dcdcdc;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: white;
     font-size: 14px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: #2d7ff9;
     outline: none;
+    border-color: #7f5af0;
+    box-shadow: 0 0 15px rgba(127,90,240,0.5);
 }
 
 textarea {
     resize: none;
-    height: 110px;
+    height: 120px;
 }
 
 button {
     width: 100%;
     padding: 14px;
-    background-color: #2d7ff9;
-    color: white;
+    border-radius: 12px;
     border: none;
-    border-radius: 8px;
+    background: linear-gradient(90deg, #00c6ff, #7f5af0);
+    color: white;
     font-weight: 500;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 0 20px rgba(127,90,240,0.4);
 }
 
 button:hover {
-    background-color: #1c63d5;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(127,90,240,0.6);
+}
+
+/* CONFIG */
+
+.config-box {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 193, 7, 0.1);
+    text-align: center;
 }
 
 /* FOOTER */
 
 .footer {
     text-align: center;
-    padding: 25px;
-    background: #1f2937;
-    color: white;
+    padding: 30px;
+    background: #0f172a;
     font-size: 13px;
+    opacity: 0.6;
 }
 
 /* RESPONSIVO */
 
-@media (max-width: 768px) {
-
+@media(max-width:768px) {
     .hero h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
-    .passos {
-        flex-direction: column;
-        align-items: center;
+    .hero p {
+        font-size: 15px;
     }
 
-    .passo {
-        width: 90%;
+    .experiencia h2 {
+        font-size: 18px;
     }
+}
 
+/* IMPACTO */
+
+.impacto {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.impacto-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.impacto-item {
+    max-width: 280px;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+.impacto-item h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.impacto-item p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.positivo .impacto-item {
+    box-shadow: 0 0 30px rgba(127,90,240,0.3);
 }
