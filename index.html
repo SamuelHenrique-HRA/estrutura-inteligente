@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Inteligente de Atendimento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Atendimento Técnico Organizado e Profissional</h1>
+            <p>
+                Antes mesmo de falar no WhatsApp, coletamos todas as informações
+                necessárias para agilizar o diagnóstico e oferecer um atendimento mais rápido e eficiente.
+            </p>
+            <a href="#atendimento" class="btn-primary">Solicitar Atendimento</a>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="como-funciona">
+        <h2>Como Funciona</h2>
+        <div class="passos">
+            <div class="passo">
+                <h3>1. Você informa o problema</h3>
+                <p>Preencha um breve formulário com os detalhes do equipamento e da situação.</p>
+            </div>
+            <div class="passo">
+                <h3>2. Sistema organiza as informações</h3>
+                <p>O sistema estrutura automaticamente os dados para facilitar o diagnóstico técnico.</p>
+            </div>
+            <div class="passo">
+                <h3>3. Atendimento mais rápido</h3>
+                <p>A equipe recebe sua solicitação já organizada e pode responder com mais precisão.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="beneficios">
+        <h2>Por que usar nosso atendimento digital?</h2>
+        <ul>
+            <li>✔ Redução de mensagens confusas</li>
+            <li>✔ Atendimento mais rápido</li>
+            <li>✔ Organização profissional</li>
+            <li>✔ Melhor experiência para o cliente</li>
+        </ul>
+    </section>
+
+    <!-- CONFIGURAÇÃO DO DONO -->
+    <section id="configNumero" class="config-box" style="display:none;">
+        <h2>Configuração Inicial</h2>
+        <p>Insira o número de WhatsApp que irá receber as solicitações.</p>
+        <input type="text" id="numeroWhatsapp" placeholder="Ex: 11999998888">
+        <button onclick="salvarNumero()">Salvar Número</button>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section id="atendimento" class="form-section">
+        <div id="formContainer">
+            <div class="form-box">
+                <h2>Solicitar Atendimento Técnico</h2>
+
+                <form id="formAtendimento">
+
+                    <h3>Seus Dados</h3>
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+                    <input type="text" id="bairro" placeholder="Seu bairro" required>
+
+                    <select id="tipoAtendimento" required>
+                        <option value="">Tipo de atendimento</option>
+                        <option>Residencial</option>
+                        <option>Comercial</option>
+                    </select>
+
+                    <h3>Equipamento</h3>
+                    <select id="equipamento" required>
+                        <option value="">Selecione</option>
+                        <option>Celular</option>
+                        <option>Notebook</option>
+                        <option>Computador</option>
+                        <option>Videogame</option>
+                        <option>TV</option>
+                        <option>Outro</option>
+                    </select>
+
+                    <h3>Descreva o Problema</h3>
+                    <textarea id="descricao" placeholder="Explique detalhadamente o que está acontecendo..." required></textarea>
+
+                    <h3>Urgência</h3>
+                    <select id="urgencia">
+                        <option>Normal</option>
+                        <option>Urgente</option>
+                        <option>Muito urgente</option>
+                    </select>
+
+                    <button type="submit">Enviar Solicitação para WhatsApp</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>© 2026 Atendimento Digital Profissional</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

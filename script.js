@@ -1,0 +1,122 @@
+// ===============================
+// ESTRUTURA INTELIGENTE DE ATENDIMENTO - MOTOR V2
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarSistema();
+});
+
+// ===============================
+// INICIALIZAÇÃO
+// ===============================
+
+function inicializarSistema() {
+    const numeroSalvo = localStorage.getItem("numeroWhatsApp");
+
+    if (!numeroSalvo) {
+        document.getElementById("configNumero").style.display = "block";
+        document.getElementById("formContainer").style.display = "none";
+    } else {
+        document.getElementById("configNumero").style.display = "none";
+        document.getElementById("formContainer").style.display = "block";
+    }
+}
+
+// ===============================
+// CONFIGURAÇÃO DO NÚMERO
+// ===============================
+
+function salvarNumero() {
+    let numero = document.getElementById("numeroWhatsapp").value;
+
+    // Remove tudo que não for número
+    numero = numero.replace(/\D/g, '');
+
+    if (numero.length < 10 || numero.length > 11) {
+        alert("Digite um número válido com DDD. Ex: 11999998888");
+        return;
+    }
+
+    localStorage.setItem("numeroWhatsApp", numero);
+
+    alert("Número configurado com sucesso!");
+    location.reload();
+}
+
+// ===============================
+// ENVIO DO FORMULÁRIO
+// ===============================
+
+const form = document.getElementById("formAtendimento");
+
+if (form) {
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        enviarAtendimento();
+    });
+}
+
+function enviarAtendimento() {
+
+    const numero = localStorage.getItem("numeroWhatsApp");
+
+    if (!numero) {
+        alert("Número de WhatsApp não configurado.");
+        return;
+    }
+
+    // Coleta de dados
+    const nome = document.getElementById("nome").value.trim();
+    const bairro = document.getElementById("bairro").value.trim();
+    const tipo = document.getElementById("tipoAtendimento").value;
+    const equipamento = document.getElementById("equipamento").value;
+    const descricao = document.getElementById("descricao").value.trim();
+    const urgencia = document.getElementById("urgencia").value;
+
+    // Validação adicional
+    if (!nome || !bairro || !tipo || !equipamento || !descricao) {
+        alert("Preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    // Classificação automática de prioridade
+    let nivelPrioridade = " Atendimento Normal";
+
+    if (urgencia === "Urgente") {
+        nivelPrioridade = " Atendimento Prioritário";
+    }
+
+    if (urgencia === "Muito urgente") {
+        nivelPrioridade = " Atendimento Imediato";
+    }
+
+    // Data e hora automática
+    const agora = new Date();
+    const dataHora = agora.toLocaleString("pt-BR");
+
+    // Estrutura da mensagem profissional
+    const mensagem =
+` SOLICITAÇÃO DE ATENDIMENTO
+
+ Data/Hora: ${dataHora}
+
+ Cliente: ${nome}
+ Bairro: ${bairro}
+ Tipo: ${tipo}
+
+ Equipamento: ${equipamento}
+ Relato:
+${descricao}
+
+ Prioridade:
+${nivelPrioridade}
+
+---
+Mensagem enviada pela Estrutura Inteligente de Atendimento Digital.`;
+
+    const mensagemCodificada = encodeURIComponent(mensagem);
+
+    const url = `https://wa.me/55${numero}?text=${mensagemCodificada}`;
+
+    window.open(url, "_blank");
+}

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f8;
+    color: #2c2c2c;
+    line-height: 1.6;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #1f2937, #2d3748);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #2d7ff9;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1c63d5;
+}
+
+/* SEÇÕES */
+
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* COMO FUNCIONA */
+
+.passos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.passo {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.passo h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* BENEFÍCIOS */
+
+.beneficios ul {
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.beneficios li {
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* CONFIGURAÇÃO */
+
+.config-box {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff3cd;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.config-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* FORMULÁRIO */
+
+.form-section {
+    background-color: #eef1f5;
+}
+
+.form-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-box h3 {
+    font-size: 14px;
+    margin: 20px 0 10px;
+    font-weight: 600;
+    color: #444;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2d7ff9;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 110px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #2d7ff9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #1c63d5;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #1f2937;
+    color: white;
+    font-size: 13px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .passos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .passo {
+        width: 90%;
+    }
+
+}
