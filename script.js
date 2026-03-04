@@ -1,9 +1,20 @@
 // ===============================
-// ESTRUTURA INTELIGENTE DE ATENDIMENTO - MOTOR V2
+// ESTRUTURA INTELIGENTE DE ATENDIMENTO - MOTOR V3
 // ===============================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+
     inicializarSistema();
+
+    const form = document.getElementById("formAtendimento");
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            enviarAtendimento();
+        });
+    }
+
 });
 
 // ===============================
@@ -11,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===============================
 
 function inicializarSistema() {
+
     const numeroSalvo = localStorage.getItem("numeroWhatsApp");
 
     if (!numeroSalvo) {
@@ -27,9 +39,9 @@ function inicializarSistema() {
 // ===============================
 
 function salvarNumero() {
+
     let numero = document.getElementById("numeroWhatsapp").value;
 
-    // Remove tudo que não for número
     numero = numero.replace(/\D/g, '');
 
     if (numero.length < 10 || numero.length > 11) {
@@ -47,15 +59,6 @@ function salvarNumero() {
 // ENVIO DO FORMULÁRIO
 // ===============================
 
-const form = document.getElementById("formAtendimento");
-
-if (form) {
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-        enviarAtendimento();
-    });
-}
-
 function enviarAtendimento() {
 
     const numero = localStorage.getItem("numeroWhatsApp");
@@ -68,55 +71,54 @@ function enviarAtendimento() {
     // Coleta de dados
     const nome = document.getElementById("nome").value.trim();
     const bairro = document.getElementById("bairro").value.trim();
-    const tipo = document.getElementById("tipoAtendimento").value;
     const equipamento = document.getElementById("equipamento").value;
     const descricao = document.getElementById("descricao").value.trim();
     const urgencia = document.getElementById("urgencia").value;
 
-    // Validação adicional
-    if (!nome || !bairro || !tipo || !equipamento || !descricao) {
+    // Validação
+    if (!nome || !bairro || !equipamento || !descricao) {
         alert("Preencha todos os campos obrigatórios.");
         return;
     }
 
-    // Classificação automática de prioridade
-    let nivelPrioridade = " Atendimento Normal";
+    // Classificação automática
+    let nivelPrioridade = "Atendimento Normal";
 
     if (urgencia === "Urgente") {
-        nivelPrioridade = " Atendimento Prioritário";
+        nivelPrioridade = "Atendimento Prioritário";
     }
 
     if (urgencia === "Muito urgente") {
-        nivelPrioridade = " Atendimento Imediato";
+        nivelPrioridade = "Atendimento Imediato";
     }
 
     // Data e hora automática
     const agora = new Date();
     const dataHora = agora.toLocaleString("pt-BR");
 
-    // Estrutura da mensagem profissional
+    // Mensagem estruturada
     const mensagem =
-` SOLICITAÇÃO DE ATENDIMENTO
+`📋 SOLICITAÇÃO DE ATENDIMENTO
 
- Data/Hora: ${dataHora}
+🗓 Data/Hora: ${dataHora}
 
- Cliente: ${nome}
- Bairro: ${bairro}
- Tipo: ${tipo}
+👤 Cliente: ${nome}
+📍 Bairro: ${bairro}
 
- Equipamento: ${equipamento}
- Relato:
+🖥 Equipamento: ${equipamento}
+
+📝 Relato do problema:
 ${descricao}
 
- Prioridade:
-${nivelPrioridade}
+🚨 Prioridade: ${nivelPrioridade}
 
 ---
-Mensagem enviada pela Estrutura Inteligente de Atendimento Digital.`;
+Enviado pela Estrutura Inteligente de Atendimento Digital`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
 
     const url = `https://wa.me/55${numero}?text=${mensagemCodificada}`;
 
     window.open(url, "_blank");
+
 }
