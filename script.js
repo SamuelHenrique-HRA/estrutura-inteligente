@@ -72,6 +72,9 @@ function enviarAtendimento() {
     const nome = document.getElementById("nome").value.trim();
     const bairro = document.getElementById("bairro").value.trim();
     const equipamento = document.getElementById("equipamento").value;
+    const marca = document.getElementById("marca").value;
+    const modelo = document.getElementById("modelo").value;
+    const problema = document.getElementById("problema").value;
     const descricao = document.getElementById("descricao").value.trim();
     const urgencia = document.getElementById("urgencia").value;
 
@@ -108,8 +111,13 @@ const mensagem =
 *Localização:* ${bairro}
 
 *Equipamento:* ${equipamento}
+*Marca:* ${marca}
+*Modelo:* ${modelo}
 
-*Descrição do problema:*
+*Problema identificado:*
+${problema}
+
+*Descrição adicional:*
 ${descricao}
 
 *Nível de Prioridade:* ${nivelPrioridade}
@@ -117,6 +125,7 @@ ${descricao}
 ━━━━━━━━━━━━━━━━━━━━━━━
 Solicitação organizada automaticamente pela
 Estrutura Inteligente de Atendimento Digital.
+`;
 `;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
@@ -126,6 +135,7 @@ Estrutura Inteligente de Atendimento Digital.
     window.open(url, "_blank");
 
 }
+
 
 
 
