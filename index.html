@@ -95,6 +95,16 @@ Prioridade: Urgente
 </section>
 
 <!-- FORMULÁRIO -->
+<div class="progress-container">
+
+<div class="progress-bar">
+<div id="progress" class="progress"></div>
+</div>
+
+<p id="progressText">Etapa 1 de 3 — Identificação do equipamento</p>
+
+</div>
+    
 <section id="atendimento" class="form-section">
     <div id="configNumero" class="config-box" style="display:none;">
         <h2>Configuração Inicial</h2>
@@ -112,7 +122,7 @@ Prioridade: Urgente
             <input type="text" id="nome" placeholder="Nome do cliente" required>
             <input type="text" id="bairro" placeholder="Bairro" required>
 
-            <select id="equipamento" required onchange="atualizarCampos()">
+           <select id="equipamento" required onchange="atualizarCampos(); atualizarProgresso()">
                 <option value="">Equipamento</option>
                 <option>Celular</option>
                 <option>Notebook</option>
@@ -127,7 +137,7 @@ Prioridade: Urgente
             
             <input type="text" id="modelo" placeholder="Modelo do equipamento (ex: iPhone 11, Dell G15)">
 
-            <select id="problema" required onchange="gerarDiagnostico()">
+            <select id="problema" required onchange="gerarDiagnostico(); atualizarProgresso()">
                 <option value="">Problema principal</option>
             </select>
 
@@ -160,6 +170,7 @@ Prioridade: Urgente
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
