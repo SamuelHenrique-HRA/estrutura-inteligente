@@ -112,7 +112,7 @@ Prioridade: Urgente
             <input type="text" id="nome" placeholder="Nome do cliente" required>
             <input type="text" id="bairro" placeholder="Bairro" required>
 
-            <select id="equipamento" required>
+            <select id="equipamento" required onchange="atualizarCampos()">
                 <option value="">Equipamento</option>
                 <option>Celular</option>
                 <option>Notebook</option>
@@ -123,34 +123,12 @@ Prioridade: Urgente
 
             <select id="marca" required>
                 <option value="">Marca</option>
-                <option>Samsung</option>
-                <option>Apple</option>
-                <option>Motorola</option>
-                <option>Xiaomi</option>
-                <option>Dell</option>
-                <option>HP</option>
-                <option>Lenovo</option>
-                <option>Asus</option>
-                <option>LG</option>
-                <option>Sony</option>
-                <option>Outro</option>
             </select>
-
+            
             <input type="text" id="modelo" placeholder="Modelo do equipamento (ex: iPhone 11, Dell G15)">
 
             <select id="problema" required>
                 <option value="">Problema principal</option>
-
-                <option>Não liga</option>
-                <option>Tela quebrada</option>
-                <option>Não carrega</option>
-                <option>Bateria descarregando rápido</option>
-                <option>Lento / Travando</option>
-                <option>Molhou</option>
-                <option>Superaquecendo</option>
-                <option>Sem imagem</option>
-                <option>Sem som</option>
-                <option>Outro</option>
             </select>
 
             <textarea id="descricao" placeholder="Descreva o problema..." required></textarea>
@@ -174,6 +152,7 @@ Prioridade: Urgente
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
