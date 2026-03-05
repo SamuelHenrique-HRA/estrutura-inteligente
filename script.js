@@ -135,6 +135,97 @@ Estrutura Inteligente de Atendimento Digital.
 
 }
 
+function atualizarCampos() {
+
+    const equipamento = document.getElementById("equipamento").value;
+
+    const marcaSelect = document.getElementById("marca");
+    const problemaSelect = document.getElementById("problema");
+
+    marcaSelect.innerHTML = '<option value="">Marca</option>';
+    problemaSelect.innerHTML = '<option value="">Problema principal</option>';
+
+    let marcas = [];
+    let problemas = [];
+
+    if (equipamento === "Celular") {
+
+        marcas = ["Apple", "Samsung", "Motorola", "Xiaomi"];
+
+        problemas = [
+            "Tela quebrada",
+            "Não carrega",
+            "Não liga",
+            "Molhou",
+            "Bateria descarregando rápido"
+        ];
+    }
+
+    if (equipamento === "Notebook") {
+
+        marcas = ["Dell", "HP", "Lenovo", "Asus"];
+
+        problemas = [
+            "Não liga",
+            "Sem imagem",
+            "Superaquecendo",
+            "Muito lento",
+            "Teclado não funciona"
+        ];
+    }
+
+    if (equipamento === "Computador") {
+
+        marcas = ["Dell", "HP", "Lenovo", "Asus"];
+
+        problemas = [
+            "Não liga",
+            "Sem imagem",
+            "Muito lento",
+            "Reiniciando sozinho",
+            "Erro no Windows"
+        ];
+    }
+
+    if (equipamento === "TV") {
+
+        marcas = ["LG", "Samsung", "Sony", "Philips"];
+
+        problemas = [
+            "Sem imagem",
+            "Sem som",
+            "Não liga",
+            "Tela quebrada",
+            "Manchas na tela"
+        ];
+    }
+
+    if (equipamento === "Videogame") {
+
+        marcas = ["Sony", "Microsoft", "Nintendo"];
+
+        problemas = [
+            "Não liga",
+            "Superaquecendo",
+            "Não lê disco",
+            "Erro no sistema",
+            "Controle não conecta"
+        ];
+    }
+
+    marcas.forEach(marca => {
+        const option = document.createElement("option");
+        option.textContent = marca;
+        marcaSelect.appendChild(option);
+    });
+
+    problemas.forEach(problema => {
+        const option = document.createElement("option");
+        option.textContent = problema;
+        problemaSelect.appendChild(option);
+    });
+
+}
 
 
 
