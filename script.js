@@ -114,7 +114,7 @@ ${descricao}
 
 *Nível de Prioridade:* ${nivelPrioridade}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━
 Solicitação organizada automaticamente pela
 Estrutura Inteligente de Atendimento Digital.
 `;
@@ -126,5 +126,6 @@ Estrutura Inteligente de Atendimento Digital.
     window.open(url, "_blank");
 
 }
+
 
 
