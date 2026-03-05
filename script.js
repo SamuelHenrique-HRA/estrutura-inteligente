@@ -126,7 +126,6 @@ ${descricao}
 Solicitação organizada automaticamente pela
 Estrutura Inteligente de Atendimento Digital.
 `;
-`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
 
@@ -135,6 +134,7 @@ Estrutura Inteligente de Atendimento Digital.
     window.open(url, "_blank");
 
 }
+
 
 
 
