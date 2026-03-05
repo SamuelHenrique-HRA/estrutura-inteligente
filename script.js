@@ -294,6 +294,29 @@ texto.innerText = diagnostico;
 
 }
 
+function atualizarProgresso(){
+
+const equipamento = document.getElementById("equipamento").value;
+const problema = document.getElementById("problema").value;
+
+const barra = document.getElementById("progress");
+const texto = document.getElementById("progressText");
+
+let progresso = 10;
+
+if(equipamento !== ""){
+progresso = 40;
+texto.innerText = "Etapa 2 de 3 — Análise do problema";
+}
+
+if(problema !== ""){
+progresso = 75;
+texto.innerText = "Etapa 3 de 3 — Envio da solicitação";
+}
+
+barra.style.width = progresso + "%";
+
+}
 
 
 
