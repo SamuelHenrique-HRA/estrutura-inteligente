@@ -98,9 +98,9 @@ function enviarAtendimento() {
 
     // Mensagem estruturada
 const mensagem =
-`━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+`
 *NOVA SOLICITAÇÃO DE ATENDIMENTO*
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━
 
 *Data/Hora:* ${dataHora}
 
@@ -126,4 +126,5 @@ Estrutura Inteligente de Atendimento Digital.
     window.open(url, "_blank");
 
 }
+
 
