@@ -127,10 +127,18 @@ Prioridade: Urgente
             
             <input type="text" id="modelo" placeholder="Modelo do equipamento (ex: iPhone 11, Dell G15)">
 
-            <select id="problema" required>
+            <select id="problema" required onchange="gerarDiagnostico()">
                 <option value="">Problema principal</option>
             </select>
 
+            <div id="diagnosticoBox" class="diagnostico-box" style="display:none;">
+
+                <h3>Diagnóstico automático preliminar</h3>
+
+                <p id="diagnosticoTexto"></p>
+
+            </div>
+            
             <textarea id="descricao" placeholder="Descreva o problema..." required></textarea>
 
             <select id="urgencia">
@@ -152,6 +160,7 @@ Prioridade: Urgente
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
