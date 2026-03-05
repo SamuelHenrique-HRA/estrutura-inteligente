@@ -117,49 +117,80 @@ Prioridade: Urgente
 
     <div id="formContainer" class="form-box">
         <h2>Simular Atendimento</h2>
-        <form id="formAtendimento">
+       <form id="formAtendimento">
 
-            <input type="text" id="nome" placeholder="Nome do cliente" required>
-            <input type="text" id="bairro" placeholder="Bairro" required>
+<!-- ETAPA 1 -->
+<div class="etapa" id="etapa1">
 
-           <select id="equipamento" required onchange="atualizarCampos(); atualizarProgresso()">
-                <option value="">Equipamento</option>
-                <option>Celular</option>
-                <option>Notebook</option>
-                <option>Computador</option>
-                <option>Videogame</option>
-                <option>TV</option>
-            </select>
+<input type="text" id="nome" placeholder="Nome do cliente" required>
+<input type="text" id="bairro" placeholder="Bairro" required>
 
-            <select id="marca" required>
-                <option value="">Marca</option>
-            </select>
-            
-            <input type="text" id="modelo" placeholder="Modelo do equipamento (ex: iPhone 11, Dell G15)">
+<button type="button" onclick="proximaEtapa(1)">Próximo</button>
 
-            <select id="problema" required onchange="gerarDiagnostico(); atualizarProgresso()">
-                <option value="">Problema principal</option>
-            </select>
+</div>
 
-            <div id="diagnosticoBox" class="diagnostico-box" style="display:none;">
 
-                <h3>Diagnóstico automático preliminar</h3>
+<!-- ETAPA 2 -->
+<div class="etapa" id="etapa2" style="display:none">
 
-                <p id="diagnosticoTexto"></p>
+<select id="equipamento" required onchange="atualizarCampos()">
+<option value="">Equipamento</option>
+<option>Celular</option>
+<option>Notebook</option>
+<option>Computador</option>
+<option>Videogame</option>
+<option>TV</option>
+</select>
 
-            </div>
-            
-            <textarea id="descricao" placeholder="Descreva o problema..." required></textarea>
+<select id="marca" required>
+<option value="">Marca</option>
+</select>
 
-            <select id="urgencia">
-                <option>Normal</option>
-                <option>Urgente</option>
-                <option>Muito urgente</option>
-            </select>
+<input type="text" id="modelo" placeholder="Modelo do equipamento">
 
-            <button type="submit">Enviar para WhatsApp</button>
+<button type="button" onclick="voltarEtapa(2)">Voltar</button>
+<button type="button" onclick="proximaEtapa(2)">Próximo</button>
 
-        </form>
+</div>
+
+
+<!-- ETAPA 3 -->
+<div class="etapa" id="etapa3" style="display:none">
+
+<select id="problema" required onchange="gerarDiagnostico()">
+<option value="">Problema principal</option>
+</select>
+
+<div id="diagnosticoBox" style="display:none">
+<p id="diagnosticoTexto"></p>
+</div>
+
+<button type="button" onclick="voltarEtapa(3)">Voltar</button>
+<button type="button" onclick="proximaEtapa(3)">Próximo</button>
+
+</div>
+
+
+<!-- ETAPA 4 -->
+<div class="etapa" id="etapa4" style="display:none">
+
+<textarea id="descricao" placeholder="Descreva o problema"></textarea>
+
+<select id="urgencia">
+<option>Normal</option>
+<option>Urgente</option>
+<option>Muito urgente</option>
+</select>
+
+<button type="button" onclick="voltarEtapa(4)">Voltar</button>
+
+<button type="submit">
+Enviar para WhatsApp
+</button>
+
+</div>
+
+</form>
     </div>
 </section>
 
@@ -170,6 +201,7 @@ Prioridade: Urgente
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
