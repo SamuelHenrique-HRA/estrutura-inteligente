@@ -227,6 +227,73 @@ function atualizarCampos() {
 
 }
 
+function gerarDiagnostico(){
+
+const equipamento = document.getElementById("equipamento").value;
+const problema = document.getElementById("problema").value;
+
+const box = document.getElementById("diagnosticoBox");
+const texto = document.getElementById("diagnosticoTexto");
+
+let diagnostico = "";
+
+if(equipamento === "Celular"){
+
+if(problema === "Tela quebrada"){
+diagnostico = "Possível substituição do display. Esse tipo de reparo normalmente é resolvido com troca do conjunto frontal.";
+}
+
+if(problema === "Não carrega"){
+diagnostico = "Possível falha no conector de carga, cabo ou bateria. Recomendado diagnóstico técnico presencial.";
+}
+
+if(problema === "Não liga"){
+diagnostico = "Pode estar relacionado a bateria descarregada, falha na placa ou dano por queda.";
+}
+
+if(problema === "Molhou"){
+diagnostico = "Equipamentos molhados precisam de limpeza técnica interna para evitar oxidação.";
+}
+
+if(problema === "Bateria descarregando rápido"){
+diagnostico = "Provável desgaste da bateria. Pode ser necessário substituição.";
+}
+
+}
+
+if(equipamento === "Notebook"){
+
+if(problema === "Não liga"){
+diagnostico = "Pode indicar falha na fonte, bateria ou placa mãe.";
+}
+
+if(problema === "Sem imagem"){
+diagnostico = "Possível falha de memória, cabo de vídeo ou tela.";
+}
+
+if(problema === "Superaquecendo"){
+diagnostico = "Normalmente causado por acúmulo de poeira ou pasta térmica desgastada.";
+}
+
+if(problema === "Muito lento"){
+diagnostico = "Pode ser causado por excesso de programas, HD antigo ou necessidade de upgrade.";
+}
+
+if(problema === "Teclado não funciona"){
+diagnostico = "Pode indicar falha no teclado interno ou cabo flat.";
+}
+
+}
+
+if(diagnostico !== ""){
+
+box.style.display = "block";
+texto.innerText = diagnostico;
+
+}
+
+}
+
 
 
 
