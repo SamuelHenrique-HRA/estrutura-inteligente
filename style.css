@@ -331,3 +331,41 @@ width:10%;
 background:#2ecc71;
 transition:0.4s;
 }
+
+/* BOTÕES DAS ETAPAS */
+
+.botoes-etapas{
+display:flex;
+gap:12px;
+margin-top:20px;
+}
+
+.botoes-etapas button{
+
+flex:1;
+padding:14px;
+
+font-family:'Poppins', sans-serif;
+font-size:15px;
+font-weight:600;
+
+border:none;
+border-radius:12px;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(90deg,#00c6ff,#7f5af0);
+
+transition:all 0.25s ease;
+
+}
+
+.botoes-etapas button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 8px 25px rgba(127,90,240,0.6);
+
+}
