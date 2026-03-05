@@ -1,5 +1,5 @@
 // ===============================
-// ESTRUTURA INTELIGENTE DE ATENDIMENTO - MOTOR V3
+// ESTRUTURA INTELIGENTE DE ATENDIMENTO - MOTOR V4
 // ===============================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
             enviarAtendimento();
         });
     }
+
+    const problema = document.getElementById("problema");
+
+    if (problema) {
+        problema.addEventListener("change", gerarDiagnostico);
+    }
+
+    atualizarBarra(1);
 
 });
 
@@ -32,6 +40,7 @@ function inicializarSistema() {
         document.getElementById("configNumero").style.display = "none";
         document.getElementById("formContainer").style.display = "block";
     }
+
 }
 
 // ===============================
@@ -53,6 +62,7 @@ function salvarNumero() {
 
     alert("Número configurado com sucesso!");
     location.reload();
+
 }
 
 // ===============================
@@ -68,7 +78,6 @@ function enviarAtendimento() {
         return;
     }
 
-    // Coleta de dados
     const nome = document.getElementById("nome").value.trim();
     const bairro = document.getElementById("bairro").value.trim();
     const equipamento = document.getElementById("equipamento").value;
@@ -78,13 +87,11 @@ function enviarAtendimento() {
     const descricao = document.getElementById("descricao").value.trim();
     const urgencia = document.getElementById("urgencia").value;
 
-    // Validação
     if (!nome || !bairro || !equipamento || !descricao) {
         alert("Preencha todos os campos obrigatórios.");
         return;
     }
 
-    // Classificação automática
     let nivelPrioridade = "Atendimento Normal";
 
     if (urgencia === "Urgente") {
@@ -95,11 +102,9 @@ function enviarAtendimento() {
         nivelPrioridade = "Atendimento Imediato";
     }
 
-    // Data e hora automática
     const agora = new Date();
     const dataHora = agora.toLocaleString("pt-BR");
 
-    // Mensagem estruturada
 const mensagem =
 `
 *NOVA SOLICITAÇÃO DE ATENDIMENTO*
@@ -135,6 +140,10 @@ Estrutura Inteligente de Atendimento Digital.
 
 }
 
+// ===============================
+// ATUALIZA CAMPOS DINÂMICOS
+// ===============================
+
 function atualizarCampos() {
 
     const equipamento = document.getElementById("equipamento").value;
@@ -159,6 +168,7 @@ function atualizarCampos() {
             "Molhou",
             "Bateria descarregando rápido"
         ];
+
     }
 
     if (equipamento === "Notebook") {
@@ -172,6 +182,7 @@ function atualizarCampos() {
             "Muito lento",
             "Teclado não funciona"
         ];
+
     }
 
     if (equipamento === "Computador") {
@@ -185,6 +196,7 @@ function atualizarCampos() {
             "Reiniciando sozinho",
             "Erro no Windows"
         ];
+
     }
 
     if (equipamento === "TV") {
@@ -198,6 +210,7 @@ function atualizarCampos() {
             "Tela quebrada",
             "Manchas na tela"
         ];
+
     }
 
     if (equipamento === "Videogame") {
@@ -211,21 +224,30 @@ function atualizarCampos() {
             "Erro no sistema",
             "Controle não conecta"
         ];
+
     }
 
     marcas.forEach(marca => {
+
         const option = document.createElement("option");
         option.textContent = marca;
         marcaSelect.appendChild(option);
+
     });
 
     problemas.forEach(problema => {
+
         const option = document.createElement("option");
         option.textContent = problema;
         problemaSelect.appendChild(option);
+
     });
 
 }
+
+// ===============================
+// DIAGNÓSTICO AUTOMÁTICO
+// ===============================
 
 function gerarDiagnostico(){
 
@@ -240,23 +262,23 @@ let diagnostico = "";
 if(equipamento === "Celular"){
 
 if(problema === "Tela quebrada"){
-diagnostico = "Possível substituição do display. Esse tipo de reparo normalmente é resolvido com troca do conjunto frontal.";
+diagnostico = "Possível substituição do display.";
 }
 
 if(problema === "Não carrega"){
-diagnostico = "Possível falha no conector de carga, cabo ou bateria. Recomendado diagnóstico técnico presencial.";
+diagnostico = "Possível falha no conector de carga ou bateria.";
 }
 
 if(problema === "Não liga"){
-diagnostico = "Pode estar relacionado a bateria descarregada, falha na placa ou dano por queda.";
+diagnostico = "Pode estar relacionado à bateria ou placa.";
 }
 
 if(problema === "Molhou"){
-diagnostico = "Equipamentos molhados precisam de limpeza técnica interna para evitar oxidação.";
+diagnostico = "Equipamento pode precisar de limpeza técnica interna.";
 }
 
 if(problema === "Bateria descarregando rápido"){
-diagnostico = "Provável desgaste da bateria. Pode ser necessário substituição.";
+diagnostico = "Provável desgaste da bateria.";
 }
 
 }
@@ -264,23 +286,23 @@ diagnostico = "Provável desgaste da bateria. Pode ser necessário substituiçã
 if(equipamento === "Notebook"){
 
 if(problema === "Não liga"){
-diagnostico = "Pode indicar falha na fonte, bateria ou placa mãe.";
+diagnostico = "Pode indicar falha na fonte ou placa mãe.";
 }
 
 if(problema === "Sem imagem"){
-diagnostico = "Possível falha de memória, cabo de vídeo ou tela.";
+diagnostico = "Possível problema na memória ou tela.";
 }
 
 if(problema === "Superaquecendo"){
-diagnostico = "Normalmente causado por acúmulo de poeira ou pasta térmica desgastada.";
+diagnostico = "Pode ser acúmulo de poeira ou pasta térmica.";
 }
 
 if(problema === "Muito lento"){
-diagnostico = "Pode ser causado por excesso de programas, HD antigo ou necessidade de upgrade.";
+diagnostico = "Pode indicar HD antigo ou excesso de programas.";
 }
 
 if(problema === "Teclado não funciona"){
-diagnostico = "Pode indicar falha no teclado interno ou cabo flat.";
+diagnostico = "Possível falha no teclado interno.";
 }
 
 }
@@ -294,23 +316,29 @@ texto.innerText = diagnostico;
 
 }
 
-function atualizarProgresso(){
+// ===============================
+// BARRA DE PROGRESSO
+// ===============================
 
-const equipamento = document.getElementById("equipamento").value;
-const problema = document.getElementById("problema").value;
+function atualizarBarra(etapa){
 
 const barra = document.getElementById("progress");
 const texto = document.getElementById("progressText");
 
-let progresso = 10;
+let progresso = 0;
 
-if(equipamento !== ""){
-progresso = 40;
+if(etapa === 1){
+progresso = 33;
+texto.innerText = "Etapa 1 de 3 — Identificação";
+}
+
+if(etapa === 2){
+progresso = 66;
 texto.innerText = "Etapa 2 de 3 — Análise do problema";
 }
 
-if(problema !== ""){
-progresso = 75;
+if(etapa === 3){
+progresso = 100;
 texto.innerText = "Etapa 3 de 3 — Envio da solicitação";
 }
 
@@ -318,5 +346,24 @@ barra.style.width = progresso + "%";
 
 }
 
+// ===============================
+// CONTROLE DE ETAPAS
+// ===============================
 
+function proximaEtapa(atual){
 
+document.getElementById("etapa"+atual).style.display = "none";
+document.getElementById("etapa"+(atual+1)).style.display = "block";
+
+atualizarBarra(atual+1);
+
+}
+
+function voltarEtapa(atual){
+
+document.getElementById("etapa"+atual).style.display = "none";
+document.getElementById("etapa"+(atual-1)).style.display = "block";
+
+atualizarBarra(atual-1);
+
+}
